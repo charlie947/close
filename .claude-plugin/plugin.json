@@ -1,0 +1,10 @@
+{
+  "name": "close",
+  "version": "1.0.0",
+  "description": "End a session with nothing left open. Finds every loose end, finishes the ones it can, and hands back only what genuinely needs you.",
+  "author": {
+    "name": "Charlie Hills",
+    "url": "https://charliehills.substack.com"
+  },
+  "license": "MIT"
+}

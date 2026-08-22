@@ -1,0 +1,28 @@
+{
+  "name": "close",
+  "owner": {
+    "name": "Charlie Hills",
+    "url": "https://charliehills.substack.com"
+  },
+  "plugins": [
+    {
+      "name": "close",
+      "source": ".",
+      "version": "1.0.0",
+      "description": "A session should not end with a list of things you now have to do. Say close and Claude sweeps the whole session for loose ends \u2014 promises it made, blocked tool calls, uncommitted work, files that never reached their destination, checks it reported as NOT RUN \u2014 then does every one that is reversible and follows from what you already asked. What comes back is a three-state ledger: CLOSED with the evidence, YOURS with the exact command, PARKED with the reason. It ends on a bare verdict so you know whether you can walk away.",
+      "metadata": {
+        "categories": [
+          "productivity"
+        ],
+        "tags": [
+          "session",
+          "cleanup",
+          "loose ends",
+          "handoff",
+          "workflow",
+          "verification"
+        ]
+      }
+    }
+  ]
+}
