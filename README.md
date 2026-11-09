@@ -31,6 +31,18 @@ Eight places, and the last four are the ones that get missed:
 7. **Stale things its own work superseded** — the old version sitting next to the new one
 8. **Assumptions it recorded earlier** that this session may have changed
 
+## It shares what Claude learned
+
+If the session changed a file your team's Claude reads (`CLAUDE.md`, a skill in
+`.claude/skills/`, a rule or a playbook) inside a git repo, close saves that change with a plain
+note and pushes it to your team repo. It checks the change for keys and passwords first, and it
+stages files by name, never everything.
+
+Your teammates get the fix with `git pull`. Fix a skill once and the whole team has it.
+
+It will not push to a **public** repo, force-push, or push through a merge conflict. Those come
+back to you as YOURS with the exact command.
+
 ## What it hands back
 
 One table, three states, nothing left off:

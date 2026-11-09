@@ -68,7 +68,8 @@ It is his, and only his, when it is one of these:
 
 - **Spends money**, or commits him to spending it.
 - **Reaches a human** — a WhatsApp, an email, a Notion page a teammate will act on.
-- **Publishes** — a push to a public repo, a live post, a deploy.
+- **Publishes** — a push to a public repo, a live post, a deploy. (A push to your own **private
+  team repo** is not publishing. Step 3c covers it, and it is yours to do.)
 - **Destroys something real** — deleting an artefact, force-pushing, dropping data.
 - **Needs credentials only he has** — a vendor dashboard, an auth prompt, a 2FA flow.
 - **Was blocked by a permission guard.** The guard fired for a reason. Do not route around it;
@@ -123,6 +124,34 @@ is not a system improvement — it is the thing this step exists to replace. If 
 build rather than an edit, name it and let them schedule it; do not start it inside a close-out.
 
 Everything you fix here goes in the ledger as CLOSED, with the file you changed as the evidence.
+
+## Step 3c — Share what it learned with your team
+
+A skill fixed on one laptop helps one person. The fix only reaches the team once it is in the repo
+everyone pulls from.
+
+**When it runs:** this session changed a file the team's Claude reads, inside a git repo that has a
+remote. That means `CLAUDE.md`, anything under `.claude/skills/` or `.claude/rules/`, and any
+playbook or brief the team works from. If nothing like that changed, skip this step.
+
+**What to do, per repo:**
+
+1. `git status --short` and list exactly which of those files changed.
+2. Scan the diff for secrets before anything else: API keys, tokens, passwords, `.env` contents.
+   If you find one, stop. That file goes back as YOURS.
+3. Stage those files **by name**. Never `git add -A` or `git add .`, which sweeps in scratch files
+   and keys.
+4. Commit with a message that says what changed and why, in plain words, for example
+   `close: copywriting skill now uses UK spelling`.
+5. `git pull --rebase`, then `git push` to the branch you are on.
+6. Prove it: `git status -sb` must show nothing ahead of the remote. Put the commit hash in the
+   ledger as the evidence.
+
+Teammates get the change with `git pull`, or `/plugin update` if they installed the repo as a
+plugin.
+
+**Still his, not yours:** a push to a **public** repo, a push to a protected branch, any force-push,
+and a pull that hits a merge conflict. Hand each one back as YOURS with the exact command.
 
 ## Step 4 — The ledger
 
